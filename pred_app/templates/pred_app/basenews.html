@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    
+    <title>PredictonWeb</title>
+  </head>
+  <body>
+  	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'baseN' %}">PredictonWeb</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0"> 
+        
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'news' %}">Stock News</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'Home' %}">Home</a>
+        </li>  
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  	<div class="container">
+  		<br/>
+
+  		{% if messages %}
+  			{% for message in messages %}
+  				<div class="alert alert-warning alert-dismissable" role="alert">
+  					<button class="close" data-dismiss="alert"><small><sup>x</sup></small></button>
+  					{{ message }}
+  				</div><br/>
+  			{% endfor %}
+  		{% endif %}
+
+    	{% block content %}
+
+		{% endblock %}
+
+	</div>
+
+  <div>
+    {% load static %}
+    
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'pred_app/fonts/icomoon/style.css' %}">
+    
+        <link rel="stylesheet" href="{% static 'pred_app/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'pred_app/css/jquery-ui.css' %}">
+        <link rel="stylesheet" href="{% static 'pred_app/css/owl.carousel.min.css' %}">
+        <link rel="stylesheet" href="{% static 'pred_app/css/owl.theme.default.min.css' %}">
+        <link rel="stylesheet" href="{% static 'pred_app/css/owl.theme.default.min.css' %}">
+    
+        <link rel="stylesheet" href="{% static 'pred_app/css/jquery.fancybox.min.css' %}">
+    
+        <link rel="stylesheet" href="{% static 'pred_app/css/bootstrap-datepicker.css' %}">
+    
+        <link rel="stylesheet" href="{% static 'pred_app/fonts/flaticon/font/flaticon.css' %}">
+    
+        <link rel="stylesheet" href="{% static 'pred_app/css/aos.css' %}">
+    
+        <link rel="stylesheet" href="{% static 'pred_app/css/style.css' %}">
+    
+      </head>
+  
+    <br><br><br><br><br><br>
+    
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9">
+          <div class="row">
+            <div class="col-md-5">
+              <h2 class="footer-heading mb-4">About Us</h2>
+              <p>PredictonWeb is founded by students of B.K. Birla College,Kalyan in 2022. Here, one can use Machine Learning to make predictions and invest smartly.</p>
+            </div>
+            <div class="col-md-3 ml-auto">
+              <h2 class="footer-heading mb-4">Quick Links</h2>
+              <ul class="list-unstyled">
+                <li><a href="/pred_app/index" class="smoothscroll">Market Watch</a></li>
+                <li><a href="/pred_app/pred" class="smoothscroll">Prediction</a></li>
+                <li><a href="baseN" class="smoothscroll">Stock Updates</a></li>
+                <li><a href="/#about-section" class="smoothscroll">Services</a></li>
+                <li><a href="/#contact-section" class="smoothscroll">Contact Us</a></li>
+              </ul>
+            </div>
+            
+          </div>
+        </div>
+            
+      <div class="row pt-5 mt-5 text-center">
+        <div class="col-md-12">
+          <div class="border-top pt-5">
+            <p>
+          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | PredictonWeb
+          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          </p>
+  
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </footer>
+  </div>
+
+</body>
+
+  </div>
+    <!-- Optional JavaScript; Bootstrap Bundle with Popper -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+</html>
+

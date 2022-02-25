@@ -1,0 +1,69 @@
+{% extends 'pred_app/master.html' %}
+{% load static %}
+
+    {% block headblock %}
+
+        <title>{{ site.name }} | PredictonWeb</title>
+        <meta charset="utf-8">
+
+    {% endblock %}
+
+    {% block mainblock %}
+         <div class="site-blocks-cover overlay" style="background-image: url({% static 'pred_app/images/stock7.jpg' %});" data-aos="fade" id="home-section">
+
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+
+
+          <div class="col-md-8 mt-lg-5 text-center">
+            <h1 class="text-uppercase" data-aos="fade-up">Welcome</h1>
+            <p class="mb-5 desc"  data-aos="fade-up" data-aos-delay="100">Wanna start trading? Need some assistance? No problem, you are at right place</p>
+            <div data-aos="fade-up" data-aos-delay="100">
+              <a href="#contact-section" class="btn smoothscroll btn-primary mr-2 mb-2">Get In Touch</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <a href="#about-section" class="mouse smoothscroll">
+        <span class="mouse-icon">
+          <span class="mouse-wheel"></span>
+        </span>
+      </a>
+    </div>
+    <div class="site-section cta-big-image" id="about-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center" data-aos="fade">
+            <h2 class="section-title mb-3">Services</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="">
+            <figure class="circle-bg">
+            <img src="{% static 'pred_app/images/about.jpg' %}" alt="Image" class="img-fluid">
+            </figure>
+          </div>
+          <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="100">
+            <div class="mb-4">
+              <h3 class="h3 mb-4 text-black">For the next generation investment</h3>
+              <p>PredictonWeb is a stock future prices prediction website for NSE and NYSE. We also provide a market analysis where stock brokers can study about the stock prices pattern.</p>
+              
+            </div>
+              
+            <div class="mb-4">
+              <ul class="list-unstyled ul-check success">
+                <li>You can do Market analysis</li>
+                <li>You can predict future stock prices</li>
+                <li>Study stock market and invest smartly</li>
+              </ul>
+              
+            </div>
+            
+          </div>
+        </div>
+      </div>  
+    </div>
+
+{% endblock %}

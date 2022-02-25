@@ -1,0 +1,41 @@
+{% extends 'pred_app/basenews.html' %}
+{% block content %}
+{% load static %}
+<br>
+<form action="{% url 'baseN' %}" class="d-flex" method="POST">
+  {% csrf_token %}
+ <div class="w-75"> <input class="form-control me-2" size="10" type="search" placeholder="Get Stock Quotes" aria-label="Search" name="ticker"></div>
+  <button style="position:relative; left:10px;" class="btn btn-outline-success" type="submit">Search</button>
+</form>
+{% if ticker %}
+	{{ ticker }}
+{% endif %}
+
+{% if api %}
+	{% if api == "Error..." %}
+		There was a problem with your ticker symbol. Please try again.
+	{% else %}
+		<h1>{{ api.companyName }}</h1><br/>
+		Price: ${{ api.latestPrice  }}<br/>
+		Previous Close: ${{ api.previousClose }}<br/>
+		Market Cap: ${{ api.marketCap  }}<br/>
+		YTD Change: {{ api.ytdChange  }}<br/>
+		52Week High: {{ api.week52High  }}<br/>
+		52Week Low: {{ api.week52Low  }}<br/>
+		
+	{% endif %}
+{% endif %}
+<br><br>
+<img alt="" class="fl" height="400px" src="{% static '/pred_app/img/img_1.jpg' %}" width="100%"/>
+
+<br><br>
+<h6>Your nav bar consists of two things, lets get familiar with the navbar first.</h6>
+
+1) The <b>"Get Stock Quotes"</b> Section : You maybe able to see a search bar at the top , with a Search button in green besides. This will help you in searching for a stock using the "ticker symbol". It will fetch details like the company name, stock price, previous close, market cap, year-to-date change, 52week high and 52 week low.<br/><br/>
+<b>Note :</b> A ticker is a symbol of a stock. It's a set of characters below 5 in count, that are used to represent that company's stock on the stock market.<br/>
+<br>
+2) The <b>"Stock News"</b> Section : This section keeps you updated of the all the highs and the lows of the stock market along with tips that gives you an edge over other, so that you can play your cards rightly! <br/><br/>
+<br><br><br><br><br><br><br>
+
+
+{% endblock %}
