@@ -161,6 +161,8 @@ a.rm, a.com {
 .mainbar .article {
     margin: 0;
     padding: 10px 15px 5px;
+    background: url(images/bg_line.gif) repeat-x bottom;
+}
 .mainbar .post-data a {
     color: #595959;
 }
@@ -188,6 +190,7 @@ ul.sb_menu, ul.ex_menu {
 }
 ul.sb_menu li, ul.ex_menu li {
     margin: 0;
+    background: url(images/bg_line.gif) repeat-x bottom;
 }
 ul.sb_menu li {
     padding: 4px 0 4px 15px;
@@ -200,6 +203,7 @@ ul.sb_menu li a, ul.ex_menu li a {
     text-decoration: none;
     margin-left: -15px;
     padding-left: 15px;
+    background: url(images/menu_link.gif) no-repeat left center;
 }
 ul.sb_menu li a:hover, ul.ex_menu li a:hover, ul.sb_menu li.active a, ul.ex_menu li.active a {
     color: #97c950;
