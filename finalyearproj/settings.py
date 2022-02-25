@@ -122,6 +122,5 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'pred_app/static')
 STATIC_URL = 'pred_app/static/'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD= 'django.db.models.AutoField'
