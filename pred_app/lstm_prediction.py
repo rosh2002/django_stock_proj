@@ -20,10 +20,7 @@ def lstm_prediction(se, stock_symbol):
 	todataframe = og_df.reset_index(inplace=False)
 
 	#to print the info of the http://127.0.0.1:8000/OG dataset
-	print("\n<----------------------Info of the OG dataset---------------------->")
-	print(todataframe.info())
-	print("<-------------------------------------------------------------------->\n")
-
+	
 	#dataframe creation
 	seriesdata = todataframe.sort_index(ascending=True, axis=0)
 	new_seriesdata = pd.DataFrame(index=range(0,len(todataframe)),columns=['Date','Close'])
@@ -52,7 +49,7 @@ def lstm_prediction(se, stock_symbol):
 	lstm_model.add(LSTM(units=50))
 	lstm_model.add(Dense(1))
 	lstm_model.compile(loss='mean_squared_error', optimizer='adam')
-	lstm_model.fit(x_totrain, y_totrain, epochs=5, batch_size=1, verbose=2)
+	lstm_model.fit(x_totrain, y_totrain, epochs=3, batch_size=1, verbose=2)
 	#predicting next data stock price
 	myinputs = new_seriesdata[len(new_seriesdata) - (100) - 60:].values
 	myinputs = myinputs.reshape(-1,1)
@@ -74,9 +71,7 @@ def lstm_prediction(se, stock_symbol):
 	result_df.columns = ['Date', 'Close']
     
 	#to print the info of the END RESULT dataset
-	print("\n<----------------------Info of the RESULT dataset---------------------->")
-	print(result_df.info())
-	print("<------------------------------------------------------------------------>\n")
+	
 	# import matplotlib.pyplot as plt
 
 	# plt.plot(result_df['Close'])
