@@ -49,7 +49,7 @@ def lstm_prediction(se, stock_symbol):
 	lstm_model.add(LSTM(units=50))
 	lstm_model.add(Dense(1))
 	lstm_model.compile(loss='mean_squared_error', optimizer='adam')
-	lstm_model.fit(x_totrain, y_totrain, epochs=3, batch_size=1, verbose=2)
+	lstm_model.fit(x_totrain, y_totrain, epochs=1, batch_size=1, verbose=2)
 	#predicting next data stock price
 	myinputs = new_seriesdata[len(new_seriesdata) - (100) - 60:].values
 	myinputs = myinputs.reshape(-1,1)
